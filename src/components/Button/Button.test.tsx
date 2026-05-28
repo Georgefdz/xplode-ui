@@ -10,9 +10,17 @@ describe("Button", () => {
     expect(screen.getByRole("button", { name: "Click me" })).toBeInTheDocument();
   });
 
-  it("applies variant classes", () => {
-    render(<Button variant="danger">Delete</Button>);
-    expect(screen.getByRole("button")).toHaveClass("bg-red-600");
+  it("applies variant classes via tokens", () => {
+    render(<Button variant="destructive">Delete</Button>);
+    expect(screen.getByRole("button")).toHaveClass("bg-destructive/10");
+  });
+
+  it("exposes data-slot, data-variant, and data-size", () => {
+    render(<Button variant="secondary" size="lg">Hi</Button>);
+    const button = screen.getByRole("button");
+    expect(button).toHaveAttribute("data-slot", "button");
+    expect(button).toHaveAttribute("data-variant", "secondary");
+    expect(button).toHaveAttribute("data-size", "lg");
   });
 
   it("merges a custom className", () => {
@@ -42,5 +50,39 @@ describe("Button", () => {
     const ref = createRef<HTMLButtonElement>();
     render(<Button ref={ref}>Hi</Button>);
     expect(ref.current).toBeInstanceOf(HTMLButtonElement);
+  });
+
+  it("renders as the child element when asChild is true", () => {
+    render(
+      <Button asChild variant="default">
+        <a href="/about">About</a>
+      </Button>
+    );
+    const link = screen.getByRole("link", { name: "About" });
+    expect(link.tagName).toBe("A");
+    expect(link).toHaveAttribute("href", "/about");
+    expect(link).toHaveClass("bg-primary");
+    expect(link).toHaveAttribute("data-slot", "button");
+  });
+
+  it("applies the punch variant class", () => {
+    render(<Button variant="punch">Go</Button>);
+    expect(screen.getByRole("button")).toHaveClass("bg-punch");
+  });
+
+  it("renders a spinner and sets aria-busy when loading", async () => {
+    const onClick = vi.fn();
+    render(
+      <Button loading onClick={onClick}>
+        Saving
+      </Button>
+    );
+    const button = screen.getByRole("button");
+    expect(button).toHaveAttribute("aria-busy", "true");
+    expect(button).toHaveAttribute("data-loading", "true");
+    expect(button.querySelector("svg")).toBeInTheDocument();
+    expect(button).toBeDisabled();
+    await userEvent.click(button);
+    expect(onClick).not.toHaveBeenCalled();
   });
 });

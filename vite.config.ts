@@ -26,7 +26,16 @@ export default defineConfig({
       fileName: format => `index.${format}.js`
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime", "class-variance-authority", "clsx", "tailwind-merge"],
+      external: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge",
+        "@radix-ui/react-slot",
+        "@radix-ui/react-dialog",
+      ],
       output: {
         globals: {
           react: "React",

@@ -1,0 +1,11 @@
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardAction,
+  CardContent,
+  CardFooter,
+  cardVariants,
+} from "./Card";
+export type { CardProps } from "./Card";

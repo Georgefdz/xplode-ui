@@ -19,4 +19,7 @@ export default defineConfig([globalIgnores(['dist', 'storybook-static']), {
   languageOptions: {
     globals: globals.browser,
   },
+  rules: {
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+  },
 }, ...storybook.configs["flat/recommended"]])

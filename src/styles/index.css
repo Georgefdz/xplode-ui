@@ -6,8 +6,10 @@
  * their end). The `@source` directive tells Tailwind to scan the component
  * files for the utility classes they use.
  */
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
 @import "./theme.css";
 
+@custom-variant dark (&:is(.dark *));
 @source "../components";
