@@ -1,0 +1,13 @@
+/**
+ * Build + Storybook entry for xplode-ui's styles.
+ *
+ * `npm run build:css` compiles this into the self-contained `dist/styles.css`
+ * that consumers import via `xplode-ui/styles.css` (no Tailwind required on
+ * their end). The `@source` directive tells Tailwind to scan the component
+ * files for the utility classes they use.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+@import "tailwindcss";
+@import "./theme.css";
+
+@source "../components";
