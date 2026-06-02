@@ -4,6 +4,12 @@ export type { ButtonProps } from "./components/Button";
 export { Input } from "./components/Input";
 export type { InputProps } from "./components/Input";
 
+export { Badge, badgeVariants } from "./components/Badge";
+export type { BadgeProps } from "./components/Badge";
+
+export { Checkbox } from "./components/Checkbox";
+export type { CheckboxProps } from "./components/Checkbox";
+
 export {
   Card,
   CardHeader,
@@ -28,3 +34,24 @@ export {
   DialogTitle,
   DialogDescription,
 } from "./components/Dialog";
+
+export {
+  KanbanProvider,
+  KanbanBoard,
+  KanbanHeader,
+  KanbanCards,
+  KanbanCard,
+  KanbanCardFooter,
+  kanbanCardVariants,
+  moveItem,
+  findColumn,
+} from "./components/Kanban";
+export type {
+  KanbanColumn,
+  KanbanItemBase,
+  KanbanProviderProps,
+  KanbanBoardProps,
+  KanbanHeaderProps,
+  KanbanCardsProps,
+  KanbanCardProps,
+} from "./components/Kanban";

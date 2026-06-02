@@ -22,7 +22,7 @@ const preview: Preview = {
       const mode = context.globals.mode as string;
       const classes = [
         mode === "dark" ? "dark" : "",
-        "bg-background text-foreground min-h-[100vh] p-6 font-sans",
+        "bg-background text-foreground p-6 font-sans",
       ]
         .filter(Boolean)
         .join(" ");
@@ -34,6 +34,7 @@ const preview: Preview = {
     },
   ],
   parameters: {
+    layout: "centered",
     controls: {
       matchers: {
         color: /(background|color)$/i,

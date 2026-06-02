@@ -35,6 +35,10 @@ export default defineConfig({
         "tailwind-merge",
         "@radix-ui/react-slot",
         "@radix-ui/react-dialog",
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/modifiers",
+        "@dnd-kit/utilities",
       ],
       output: {
         globals: {
