@@ -39,6 +39,7 @@ export default defineConfig({
         "@dnd-kit/sortable",
         "@dnd-kit/modifiers",
         "@dnd-kit/utilities",
+        "@tanstack/react-table",
       ],
       output: {
         globals: {

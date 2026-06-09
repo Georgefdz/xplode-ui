@@ -55,3 +55,36 @@ export type {
   KanbanCardsProps,
   KanbanCardProps,
 } from "./components/Kanban";
+
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableCaption,
+  TableEmpty,
+  tableVariants,
+  DataTable,
+  useDataTable,
+  createDataTableColumnHelper,
+  dataTableFeatures,
+  flexRender,
+} from "./components/Table";
+export type {
+  TableProps,
+  TableHeadProps,
+  TableEmptyProps,
+  SortDirection,
+  DataTableProps,
+  DataTableColumnDef,
+  DataTableFeatures,
+  ColumnDef,
+  SortingState,
+  RowSelectionState,
+  ColumnVisibilityState,
+  ExpandedState,
+  PaginationState,
+} from "./components/Table";
